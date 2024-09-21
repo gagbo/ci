@@ -6,13 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
-        with.access_token: ${{ github.token }}
+        with:
+          access_token: ${{ github.token }}
 
       - name: Set up Doom Emacs CI
         uses: doomemacs/ci@legacy
 
       - uses: actions/checkout@v3.0.2
-        with.fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       - name: Run commit linter
         env:
